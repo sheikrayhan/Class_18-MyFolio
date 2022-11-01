@@ -1,0 +1,474 @@
+/* Common CSS Start */
+:root{
+    --primaryColor: #02918b;
+    --secondaryColor: white;
+    --formColor: #0a0a0b;
+    --thirdColor: #cfc91d;
+    --inputColor: #7e8287;
+}
+body.darkMode{
+    --primaryColor: #4a5b44;
+    --secondaryColor: white;
+    --formColor: #111;
+    --thirdColor: #2f916d;
+    --inputColor: #fff; 
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+ }
+body.darkMode{
+    background: #111;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+.container{
+    width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.section_info{
+    text-align: center;
+    color: var(--inputColor);
+}
+.section_info h2{
+    color: var(--primaryColor);
+    font-size: 46px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+}
+.section_info p b{
+    font-size: 23px;
+}
+/* Common CSS End */
+
+/* Preloader Section CSS Start */
+#preloader{
+    position: fixed;
+    z-index: 99999999999999;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Preloader Section CSS End */
+
+/* Nav Section CSS Start */
+nav{
+    background-color: var(--primaryColor);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999999;
+    transition: 2s;
+}
+nav.active{
+    position: fixed;
+    animation: menu_fixed 1s;
+}
+@keyframes menu_fixed {
+    from{
+        top: -100px;
+    }   
+    to{
+        top: 0px;
+    } 
+}
+
+#sideMenu{
+    width: 200px;
+    height: 100%;
+    background-color: var(--thirdColor);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 99999999;
+    margin-left: -200px;
+    transition: .5s;
+    overflow-y: auto;
+}
+#sideMenu.active{
+    margin-left: 0;
+    animation: sideMenu_fixed 1s;
+}
+@keyframes sideMenu_fixed {
+    from{
+        left:100px;
+    }   
+    to{
+        left: 0px;
+    } 
+}
+
+
+#sideMenu ul li a{
+    display: inline-block;
+    width: 100%;
+    color: var(--secondaryColor);
+    background-color: var(--primaryColor);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: .6s;
+}
+#sideMenu ul li a:hover{
+    color: var(--primaryColor);
+    background-color: var(--thirdColor);
+    /* border-radius: 10px; */
+}
+.row{
+    align-items: center;
+}
+nav .logo{
+    width: 20%;
+}
+nav .logo img{
+    display: block;
+    transition: all linear 0.3s;
+}
+nav .logo img:hover{
+    padding-left: 5px;
+}
+nav .menu{
+    width: 80%;
+}
+nav .menu ul{
+    display: flex;
+    justify-content: flex-end;
+}
+nav .menu ul li a{
+    display: inline-block;
+    color: var(--secondaryColor);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 26px 25px;
+    transition: .6s;
+}
+nav .menu ul li a:hover{
+    color: var(--primaryColor);
+    background-color: var(--thirdColor);
+    border-radius: 10px;
+}
+/* Nav Section CSS End */
+
+/* Banner Section CSS Start */
+#banner{
+    background-image: url(../img/banner_bg.jpg);
+    height: 729px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: var(--secondaryColor);
+    position: relative;
+    z-index: 1;
+}
+#banner::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0.66;
+    background-color: black;
+    z-index: -1;
+}
+#banner .container{
+    height: 100%;
+}
+#banner .row{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#banner .banner_content h3{
+    font-size: 30px;
+    font-weight: 400;
+}
+#banner .banner_content h1{
+    font-size: 68px;
+    font-weight: 800;
+    letter-spacing: 30px;
+    text-transform: uppercase;
+}
+#banner .banner_content p{
+    font-size: 18px;
+}
+#banner .banner_content img{
+    display: block;
+    margin: 25px auto;
+}
+#banner .banner_content a{
+    display: inline-block;
+    color: var(--formColor);
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    background-color: var(--thirdColor);
+    letter-spacing: 5px;
+    transition: .7s;
+}
+#banner .banner_content a:hover{
+    color: var(--thirdColor);
+    background-color: var(--primaryColor);
+    border-radius: 3px;
+}
+/* Banner Section CSS End */
+
+/* About Section CSS Start */
+#about{
+    margin: 98px 0px;
+}
+#about .section_info p{
+    width: 878px;
+    padding: 20px 0px;
+    margin: auto;
+}
+#about .about_item{
+    width: 25%;
+    text-align: center;
+    padding: 36px 40px;
+    border-right: 1px solid  #d9dbdb;
+}
+#about .about_item:last-child{
+    border: none;
+}
+#about .about_item i{
+    color: var(--primaryColor);
+    font-size: 25px;
+}
+#about .about_item h4{
+    font-size: 16px;
+    color: var(--inputColor);
+    font-weight: 800;
+    padding: 29px 0;
+}
+#about .about_item p{
+    font-size: 11px;
+    color: var(--formColor);
+}
+/* About Section CSS End */
+
+/* Service Section CSS Start */
+#Service{
+    background-image: url(../img/service_bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 75px 0;
+}
+#Service .inner_container{
+    width: 50%;
+}
+#Service .section_info{
+    text-align: left;
+    padding-bottom: 30px;
+}
+#Service .section_info p{
+    padding-top: 40px;
+}
+#Service .service_item{
+    width: 50%;
+    padding: 25px 110px 25px 0;
+}
+#Service .service_item i{
+    color: var(--primaryColor);
+    font-size: 25px;
+}
+#Service .service_item h4{
+    font-size: 16px;
+    color: var(--inputColor);
+    font-weight: 800;
+    padding: 29px 0;
+}
+#service .service_item p{
+    font-size: 11px;
+    color: var(--inputColor);
+ }
+/* Service Section CSS End */
+
+/* My Work Section CSS Start */
+#work .section_info{
+    padding: 100px 0;
+}
+#work .section_info p{
+    width: 675px;
+    margin: auto;
+    padding-top: 30px;
+}
+#work .work_item{
+    width: 25%;
+    position: relative;
+}
+#work .work_item img{
+    width: 100%;
+    display: block;
+}
+
+#work .work_item .overlay{
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    top: 20px;
+    bottom: 20px;
+    background: rgba(2, 145, 139, .85);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+#work .work_item:hover .overlay{
+    opacity: 1;
+    visibility: visible;
+    border-radius: 10px;
+    color: var(--thirdColor);
+}
+#work .work_item .overlay h5{
+    font-size: 16px;
+    font-weight: 800;
+    padding: 20px 0;
+}
+/* My Work Section CSS End */
+
+/* Contact Section CSS Start */
+#contact{
+    padding-top: 100px;
+}
+#contact .section_info p{
+    width: 678px;
+    margin: auto;
+    padding: 20px 0;
+}
+#contact .contact_form{
+    background-color: var(--formColor);
+    padding: 70px 0;
+}
+#contact .contact_form input,
+#contact .contact_form textarea{
+    color: var(--inputColor);
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px;
+    margin-bottom: 50px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #7e8287;
+}
+#contact .contact_form .input_small{
+    width: 640px;
+}
+#contact .contact_form .input_large{
+    width: 915px;
+}
+#contact .contact_form textarea{
+    resize: none;
+    font-family: 'Open Sans', sans-serif;
+}
+#contact .contact_form button{
+    color: var(--formColor);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: var(--thirdColor);
+    border: none;
+    padding: 20px 66px;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: .6s;
+}
+#contact .contact_form button:hover{
+    background-color: var(--primaryColor);
+    color: var(--thirdColor);
+}
+/* Contact Section CSS End */
+
+/* Contact Section_2 CSS Start */
+#contact_2{
+    padding: 50px 0px;
+    background-color: var(--formColor);
+}
+#contact_2 .section_info h2{
+    padding-bottom: 30px;
+}
+#contact_2 form{
+    margin: auto;
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+#contact_2 form input{
+    color: var(--inputColor);
+    display: block;
+    margin: auto;
+    width: 640px;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 20px;
+    margin-bottom: 50px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--inputColor);
+}
+#contact_2 form button {
+    color: var(--formColor);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: var(--thirdColor);
+    border: none;
+    padding: 20px 66px;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    transition: .6s;
+}
+#contact_2 form button:hover{
+    background-color: var(--primaryColor);
+    color: var(--thirdColor);
+}
+#contact_2 form .password {
+    position: relative;
+}
+#contact_2 form .password i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    color: var(--thirdColor);
+}
+/* Contact Section_2 CSS End */
+
+
+/* Footer CSS Start */
+footer{
+    background-color: var(--formColor);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--inputColor);
+    padding: 15px;
+    text-align: center;
+}
+/* Footer CSS End */
